@@ -16,7 +16,7 @@ const Landing = ({ isAuthenticated }) => {
       <section className='landing dark-overlay'>
         <div>
           <div className='landing-content'>
-            <h1 className='x-large light-font'>Welcome to BaitScore</h1>
+            <h1 className='x-large light-font'>Välkommen till ABB-Akuten</h1>
             <p className='lead light-font'>
               BaitScore is a social network that connects fishermen worldwide
               and lets users share their favorite fishing stories, techniques

@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://ABBAkuten:ABBAkuten123@abbakuten.uvuka.mongodb.net/ABBAkuten?retryWrites=true&w=majority",
+    "testToken": "Secret Token"
+}
