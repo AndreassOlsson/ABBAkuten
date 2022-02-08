@@ -238,10 +238,11 @@ small {
 }
 
 .logo {
-  background-image: url(img/logo-abbgymnasiet.png);
+  background-image: url(img/logo.png);
   background-position: center center;
-  background-size: cover;
-  width: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
   height: 40px;
   position: relative;
   top: 8px;
@@ -251,8 +252,7 @@ small {
   background-image: url(img/logo.png);
   background-position: center center;
   background-size: cover;
-  width: 180px;
-  height: 60px;
+  max-height: 60px;
 }
 
 .navbar {
