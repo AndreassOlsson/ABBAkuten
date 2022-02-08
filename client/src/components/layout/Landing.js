@@ -18,16 +18,17 @@ const Landing = ({ isAuthenticated }) => {
           <div className='landing-content'>
             <h1 className='x-large light-font'>Välkommen till ABB-Akuten</h1>
             <p className='lead light-font'>
-              BaitScore is a social network that connects fishermen worldwide
-              and lets users share their favorite fishing stories, techniques
-              and lures
+              ABB-Akuten är ett läxhjälpsforum för och av eleverna på
+              ABBgymnasiet i Västerås. Här kan du få hjälp med dina läxor av
+              både lärare och elever förutsatt att du själv hjälper andra elever
+              när du kan!
             </p>
             <div className='btns'>
               <Link to='/register' className='btn btn-primary'>
-                Sign Up
+                Skapa Konto
               </Link>
               <Link to='/login' className='btn btn-light'>
-                Login
+                Logga in
               </Link>
             </div>
           </div>
