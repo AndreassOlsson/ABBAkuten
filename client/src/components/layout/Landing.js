@@ -34,17 +34,15 @@ const Landing = ({ isAuthenticated }) => {
           </div>
         </div>
       </section>
-      <section className='content-cluster bg-shark'>
+      <section className='content-cluster'>
         <Textbox
-          header='Find the best lures'
-          text='BaitScore hosts regular polls that allows members to vote on their favorite lures and thereby 
-            sheds light on the lures that are the most effective'
+          header='Personlig läxhjälp'
+          text='ABB Akuten hjäpler elever på ABB Gymnasiet med sina läxor genom att låta både lärare och andra elever svara på frågor!'
         />
         <Imgcontainer />
         <Textbox
-          header='Learn from others'
-          text='BaitScore allows anglers to learn new fishing strategies from others by encouraging users to share their 
-            knowledge and stories on active discussion threads'
+          header='För elever av elever'
+          text='ABB Akuten är skapad av elever för elever. Det är ett mer personligt och lokalt verktyg för en skräddarsydd upplevelse.'
         />
       </section>
     </Fragment>
