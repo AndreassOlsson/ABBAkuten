@@ -42,12 +42,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/register' className='light-font'>
-          Register
+          Registrera
         </Link>
       </li>
       <li>
         <Link to='/login' className='light-font'>
-          Login
+          Logga in
         </Link>
       </li>
     </ul>
