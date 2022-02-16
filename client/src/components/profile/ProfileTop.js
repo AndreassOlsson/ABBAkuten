@@ -49,7 +49,7 @@ const ProfileTop = ({
             )}
             {favoriteLure ? (
               <p className='div5 miniFont'>
-                <span className='hide-sm'>Favorite Lure:</span>
+                <span className='hide-sm'>Favoritämne:</span>
                 <p
                   className={
                     status
@@ -81,7 +81,7 @@ const ProfileTop = ({
             </ul>
           </div>
         </div>
-        <p className='lower added-margin italic'>{bio}</p>
+        <p className='lower added-margin italic bio'>{bio}</p>
       </div>
     </Fragment>
   );

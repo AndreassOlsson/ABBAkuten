@@ -143,6 +143,12 @@ small {
   font-style: italic;
 }
 
+.bio {
+  width: 50%;
+  text-align: center;
+  padding: 12px 0 72px 0;
+}
+
 .dark-overlay {
   position: absolute;
   top: 0;
@@ -323,9 +329,9 @@ small {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('./img/profile_hero_1.jpg');
+  background-image: url('./img/ferhat.jpg');
   background-size: cover;
-  background-position: 50% 80%;
+  background-position: 10% 40%;
   margin-bottom: 65px;
 }
 
@@ -441,11 +447,17 @@ small {
 .profile-content {
   padding: 12px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--light-color);
   max-width: 470px;
   justify-content: space-between;
   word-wrap: break-word;
   margin: 24px 0 6px 0;
+  text-align: center;
+}
+.profile-content > div {
+  margin: 12px 0;
 }
 
 .profile-content-info {
@@ -614,6 +626,7 @@ textarea {
   margin: 20px 0 0 0;
   font-size: 1.2rem;
   font-weight: 500;
+  resize: none;
 }
 
 input[type='submit'] {
@@ -768,7 +781,7 @@ input:-webkit-autofill:active {
   position: relative;
   height: 90vh;
   width: 100%;
-  background-image: url(img/ferhat.jpg);
+  background-image: url(img/students-placeholder.jpg);
   background-size: cover;
   background-position: center;
 }

@@ -36,9 +36,9 @@ router.post(
   [
     auth,
     [
-      check('species', 'Species is required').not().isEmpty(),
-      check('pbs', 'Pbs is required').not().isEmpty(),
-      check('favoriteLure', 'Favorite lure is required').not().isEmpty(),
+      check('grade', 'Klass krävs').not().isEmpty(),
+      check('favoriteSubject', 'Favoritämne krävs').not().isEmpty(),
+      check('helpingSubjects', 'Hjälpämnen krävs').not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -48,41 +48,37 @@ router.post(
       return res.status(400).json({ errors: errors.array });
     }
     const {
-      city,
-      age,
-      status,
-      species,
-      pbs,
-      favoriteLure,
+      grade,
+      focus,
+      favoriteSubject,
+      helpingSubjects,
       bio,
-      youtube,
+      snapchat,
+      instagram,
       twitter,
       facebook,
-      instagram,
     } = req.body;
 
     // Build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (city) profileFields.city = city;
-    if (age) profileFields.age = age;
-    if (status) profileFields.status = status;
-    if (favoriteLure) profileFields.favoriteLure = favoriteLure;
+    if (grade) profileFields.grade = grade;
+    if (focus) profileFields.focus = focus;
+    if (favoriteSubject) profileFields.favoriteSubject = favoriteSubject;
     if (bio) profileFields.bio = bio;
 
-    if (species) {
-      profileFields.species = species.split(',').map((specie) => specie.trim());
-    }
-    if (pbs) {
-      profileFields.pbs = pbs.split(',').map((pb) => pb.trim());
+    if (helpingSubjects) {
+      profileFields.helpingSubjects = helpingSubjects
+        .split(',')
+        .map((helpingSubject) => helpingSubject.trim());
     }
 
     // Build social object
     profileFields.social = {};
-    if (youtube) profileFields.social.youtube = youtube;
+    if (snapchat) profileFields.social.snapchat = snapchat;
+    if (instagram) profileFields.social.instagram = instagram;
     if (twitter) profileFields.social.twitter = twitter;
     if (facebook) profileFields.social.facebook = facebook;
-    if (instagram) profileFields.social.instagram = instagram;
 
     try {
       // Update if a profile is found

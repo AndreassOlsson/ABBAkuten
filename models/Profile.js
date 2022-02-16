@@ -5,40 +5,35 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
   },
-  city: {
-    type: String,
-  },
-  age: {
-    type: String,
-  },
-  status: {
+  grade: {
     type: String,
     required: true,
   },
-  species: {
-    type: Array,
-  },
-  pbs: {
-    type: Array,
-  },
-  favoriteLure: {
+  focus: {
     type: String,
+  },
+  favoriteSubject: {
+    type: String,
+    required: true,
+  },
+  helpingSubjects: {
+    type: Array,
     required: true,
   },
   bio: {
     type: String,
   },
   social: {
-    youtube: {
+    snapchat: {
+      type: String,
+    },
+    instagram: {
       type: String,
     },
     twitter: {
       type: String,
     },
     facebook: {
-      type: String,
-    },
-    instagram: {
       type: String,
     },
   },
