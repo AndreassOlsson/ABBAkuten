@@ -21,23 +21,21 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <section className={profile === null ? '' : 'whole-screen py-0'}>
-        <div className='center-x py-0'>
+      <section className={profile === null ? '' : 'whole-screen'}>
+        <div className='profile-container center-x'>
           {profile !== null ? (
             <Fragment>
               <ProfileTop profile={profile} />
-              <div className='btns'>
+              <div className='btns '>
                 <DashboardActions />
-                <div className='my-2'>
-                  <button
-                    className='btn btn-danger'
-                    onClick={() => deleteAccount()}
-                  >
-                    <i className='fas fa-user-minus'></i>
-                    {''}
-                    Delete Account
-                  </button>
-                </div>
+                <button
+                  className='btn btn-danger added-margin'
+                  onClick={() => deleteAccount()}
+                >
+                  <i className='fas fa-user-minus'></i>
+                  {''}
+                  Radera konto
+                </button>
               </div>
             </Fragment>
           ) : (
@@ -45,10 +43,10 @@ const Dashboard = ({
               <div className='noProfilePage'>
                 <div className='bruh'>
                   <p className='lead light-font'>
-                    You have not yet created a profile :(
+                    Du har inte skapat en profil än :/ :(
                   </p>
                   <Link to='/create-profile' className='btn btn-primary my-1'>
-                    Create profile
+                    Skapa profil
                   </Link>
                 </div>
               </div>

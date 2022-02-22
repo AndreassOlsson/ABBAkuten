@@ -13,30 +13,32 @@ const ProfileTop = ({
 }) => {
   return (
     <Fragment>
-      <div className='hero light-font'>
-        <div className='bg-blur'>
-          <h1 className='large'>{name}</h1>
-          <p
-            className={
-              focus
-                ? focus.toString().replace(/ /, '-').toLowerCase() +
-                  ' heavy-font'
-                : ''
-            }
-          >
-            {focus}
-            <br />
-            {grade}
-          </p>
-          <img
-            src={avatar}
-            alt=''
-            className='round medium-avatar overlapping'
-          />
+      <div className='curtains'>
+        <div className='hero light-font'>
+          <div className='bg-blur'>
+            <h1 className='large'>{name}</h1>
+            <p
+              className={
+                focus
+                  ? focus.toString().replace(/ /, '-').toLowerCase() +
+                    ' heavy-font'
+                  : ''
+              }
+            >
+              {focus}
+              <br />
+              {grade}
+            </p>
+            <img
+              src={avatar}
+              alt=''
+              className='round medium-avatar overlapping'
+            />
+          </div>
         </div>
       </div>
       <div className='center-x'>
-        <div className='profile-content dark-font'>
+        <div className='profile-content light-font'>
           <div className='profile-content-info'>
             <p className='grey-font italic'>Favoritämne:</p>
             <p
@@ -62,7 +64,7 @@ const ProfileTop = ({
                     className={
                       focus
                         ? focus.toString().replace(/ /, '-').toLowerCase() +
-                          ' fas fa-check heavy-font'
+                          ' fas fa-check'
                         : ' fas fa-check'
                     }
                   ></i>

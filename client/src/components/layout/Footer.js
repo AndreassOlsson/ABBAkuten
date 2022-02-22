@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className='bg-dark'>
       <Link to='/'>
-        <div className='logo'></div>
+        <div className='logo-big'></div>
       </Link>
       <div>
         <a href='https://www.instagram.com/ande_o/' className='light-font'>

@@ -11,21 +11,21 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link to='/posts' className='light-font'>
           <i className='fas fa-mail-bulk'></i>
           {''}
-          <span className='hide-sm'>Posts</span>
+          <span className='hide-sm'>Inlägg</span>
         </Link>
       </li>
       <li>
         <Link to='/profiles' className='light-font'>
           <i className='fas fa-users'></i>
           {''}
-          <span className='hide-sm'>Fishermen</span>
+          <span className='hide-sm'>Elever</span>
         </Link>
       </li>
       <li>
         <Link to='/dashboard' className='light-font'>
           <i className='fas fa-user'></i>
           {''}
-          <span className='hide-sm'>Dashboard</span>
+          <span className='hide-sm'>Profil</span>
         </Link>
       </li>
       <li>
