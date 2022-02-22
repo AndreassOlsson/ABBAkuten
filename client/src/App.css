@@ -58,7 +58,7 @@ ul {
 
 li {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 h1 {
@@ -66,7 +66,8 @@ h1 {
   margin-bottom: 16px;
 }
 
-p {
+p,
+li {
   font-size: 1.1rem;
   letter-spacing: 1.3px;
   font-weight: 500;
@@ -144,9 +145,10 @@ small {
 }
 
 .bio {
-  width: 50%;
+  max-width: 260px;
   text-align: center;
-  padding: 12px 0 72px 0;
+  padding: 0 0 0 0;
+  margin: 0 auto;
 }
 
 .dark-overlay {
@@ -255,6 +257,7 @@ small {
   height: 40px;
   position: relative;
   top: 8px;
+  left: 20px;
 }
 
 .logo-big {
@@ -342,6 +345,7 @@ small {
   justify-content: inherit;
   align-items: inherit;
   flex-direction: inherit;
+  text-align: center;
   backdrop-filter: blur(10px);
 }
 
@@ -443,6 +447,30 @@ small {
   font-weight: 550;
   text-align: center;
 }
+.flex-list {
+  width: 60vw;
+  max-width: 260px;
+  min-width: 130px;
+  margin: auto;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.flex-list > li {
+  flex-wrap: wrap;
+  flex: 1 1 130px;
+  max-width: 130px;
+  max-height: 1.1rem;
+  text-align: center;
+  margin: 12px 0;
+  padding: 0;
+}
+#adjust-helpingSubjects-header {
+  margin-bottom: -12px;
+}
 
 .profile-content {
   padding: 12px;
@@ -453,15 +481,21 @@ small {
   max-width: 470px;
   justify-content: space-between;
   word-wrap: break-word;
-  margin: 24px 0 6px 0;
+  margin: 24px auto 6px auto;
   text-align: center;
-}
-.profile-content > div {
-  margin: 12px 0;
 }
 
 .profile-content-info {
-  width: 100px;
+  max-width: 260px;
+  max-height: 300px;
+  width: 100%;
+  min-height: 100px;
+  margin: 12px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .profile img {
@@ -472,25 +506,18 @@ small {
   white-space: nowrap;
 }
 
-.fishing-novice {
-  color: green;
-}
-.casual-angler {
+.internationell {
   color: Blue;
 }
-.experienced-fisherman {
-  color: purple;
+.natur {
+  color: green;
 }
-.professional-fisherman {
-  color: gold;
+.teknisk-design {
+  color: var(--primary-color);
 }
 
 .favoriteLure {
   align-self: flex-end;
-}
-
-.bottom {
-  margin-top: auto;
 }
 
 .fa-medal {
@@ -498,6 +525,9 @@ small {
 }
 .fa-fish {
   color: var(--primary-color);
+}
+.fa-check {
+  margin: 0 0 0 6px;
 }
 
 .round {
@@ -682,12 +712,19 @@ input:-webkit-autofill:active {
   .hide-sm {
     display: none;
   }
+  .logo {
+    height: 35px;
+    width: 35px;
+  }
   p,
-  a {
+  a,
+  li {
     font-size: 1rem;
   }
 }
-
+.flex-list > li {
+  max-height: 1rem;
+}
 .my-1 {
   margin-top: 12px;
   margin-bottom: 12px;
@@ -734,6 +771,9 @@ input:-webkit-autofill:active {
   }
   h4 {
     font-size: 0.6rem;
+  }
+  .large {
+    max-width: 260px;
   }
   .parent {
     display: grid;

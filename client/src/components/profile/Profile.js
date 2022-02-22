@@ -24,7 +24,7 @@ const Profile = ({
         <Fragment>
           <div className='top-left'>
             <Link to='/profiles' className='btn btn-light'>
-              Back To All Fishermen
+              Tillbaka till elever
             </Link>
             {auth.isAuthenticated &&
               auth.loading === false &&
