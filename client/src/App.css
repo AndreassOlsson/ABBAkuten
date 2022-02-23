@@ -336,12 +336,12 @@ small {
 
 .overlapping {
   position: absolute;
-  top: calc(50vh - 80px);
+  top: calc(48vh - 64px);
 }
 
 .hero {
   width: 60vw;
-  height: 50vh;
+  height: 46vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,14 +349,14 @@ small {
   background-image: url('./img/ferhat.jpg');
   background-size: cover;
   background-position: 10% 40%;
-  margin: 0 auto 65px auto;
-  border-radius: 0 0 24px 24px;
+  margin: 2vh auto 65px auto;
+  border-radius: 24px;
   box-shadow: 0 0 0 3px #c5c5c5;
 }
 .curtains {
-  height: 55vh;
+  height: 50vh;
   width: 100vw;
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(35, 35, 35);
 }
 
 .bg-blur {
@@ -367,8 +367,8 @@ small {
   align-items: inherit;
   flex-direction: inherit;
   text-align: center;
-  backdrop-filter: brightness(0.3);
-  border-radius: 0 0 24px 24px;
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
 }
 
 .top-left {
@@ -473,14 +473,16 @@ small {
 .profile-content {
   max-width: 600px;
   min-height: 300px;
-  padding: 12px;
+  padding: 72px 12px 36px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(50, 50, 50);
+  box-shadow: 0 0 0 3px #c5c5c5;
+
   justify-content: space-between;
   word-wrap: break-word;
-  margin: 24px auto 24px auto;
+  margin: 2vh auto 24px auto;
   text-align: center;
 
   overflow: auto;
@@ -533,6 +535,26 @@ small {
 
 .flex-list > li:last-child {
   margin-top: 12px;
+}
+
+.social-icons {
+  margin: 12px 0 48px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-icons > i {
+  margin: 0 12px;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile img {
@@ -617,6 +639,7 @@ small {
   flex-direction: column;
   align-items: center;
   background-color: rgb(35, 35, 35);
+  background-color: rgb(0, 0, 0);
 }
 
 .center-y {

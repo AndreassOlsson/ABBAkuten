@@ -77,6 +77,12 @@ const ProfileTop = ({
             <p className='italic bio'>"{bio}"</p>
           </div>
         </div>
+        <div className='social-icons light-font'>
+          <i class='fa fa-snapchat'></i>
+          <i class='fa fa-instagram'></i>
+          <i class='fa fa-twitter'></i>
+          <i class='fa fa-facebook'></i>
+        </div>
       </div>
     </Fragment>
   );
