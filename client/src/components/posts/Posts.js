@@ -15,13 +15,11 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <section className='whole-screen abstract-background center-x'>
-        <h1 className='x-large my-1'>Posts</h1>
-        <p className='lead'>
-          <i className='fas fa-users'></i> Share your thoughts and stories with
-          the community!
-        </p>
-        <PostForm />
+      <section className='whole-screen abstract-background center-x light-font'>
+        <div className='post-form-container'>
+          <h1 className='x-large'>Inlägg</h1>
+          <PostForm />
+        </div>
         <div className='posts'>
           {posts.map((post) => (
             <PostItem key={post._id} post={post} />

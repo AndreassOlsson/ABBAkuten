@@ -23,7 +23,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
         </Link>
       </div>
 
-      <section className='whole-screen abstract-background center-x'>
+      <section className='whole-screen abstract-background center-x light-font'>
         <PostItem post={post} showActions={false} />
         <CommentForm _id={post._id} />
         <div className='posts'>

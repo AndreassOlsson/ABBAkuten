@@ -14,7 +14,7 @@ const PostItem = ({
   showActions,
 }) => {
   return (
-    <div className='post shadow'>
+    <div className='post'>
       <div className='postAuthor'>
         <Link to={`/profile/${user}`}>
           <img src={avatar} alt='' className='round avatar' />
