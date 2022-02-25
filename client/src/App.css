@@ -114,6 +114,11 @@ footer {
 .primary-font {
   color: var(--primary-color);
 }
+.break-name {
+  word-spacing: 100px;
+  max-height: 50px;
+  overflow: scroll;
+}
 
 .x-large {
   font-size: 3rem;
@@ -316,6 +321,38 @@ small {
   transition: all 0.2s;
 }
 
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  width: 750px;
+}
+
+.profileItem {
+  flex: 1 1 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
+  text-align: center;
+  padding: 0 12px 12px 12px;
+  background-color: rgb(50, 50, 50);
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 12px;
+}
+
+.profileItem > h5 {
+  overflow: auto;
+  max-height: 38px;
+}
+
 .px-2 {
   padding-left: 200px;
   padding-right: 200px;
@@ -357,8 +394,7 @@ small {
 .curtains {
   height: 50vh;
   width: 100vw;
-  background-color: rgb(50, 50, 50);
-  border-radius: 0 0 24px 24px;
+  background-color: rgb(0, 0, 0);
 }
 
 .bg-blur {
@@ -380,13 +416,14 @@ small {
   z-index: 1;
 }
 
-.posts {
+.posts,
+.profiles {
   padding: 24px 0 72px 0;
 }
 
 .post {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
@@ -399,6 +436,10 @@ small {
   margin: 24px 0;
 }
 
+.comment {
+  max-width: 900px;
+}
+
 .postAuthor {
   grid-area: 1 / 1 / 5 / 3;
   text-align: center;
@@ -407,20 +448,15 @@ small {
   justify-content: center;
 }
 .postText {
-  grid-area: 1 / 3 / 4 / 11;
+  grid-area: 1 / 3 / 4 / 13;
   overflow: scroll;
 }
 .postActions {
   grid-area: 4 / 3 / 5 / 11;
 }
 
-.comment {
-  max-width: 1000px;
-  width: 70vw;
-  max-height: 140px;
-}
-
-.post-form-container {
+.post-form-container,
+.profiles-form-container {
   height: 360px;
   width: 100vw;
   background: rgb(218, 177, 177);
@@ -429,10 +465,30 @@ small {
     rgba(218, 177, 177, 1) 0%,
     rgba(228, 108, 108, 1) 52%
   );
+  background: rgb(250, 194, 194);
+  background: linear-gradient(
+    164deg,
+    rgba(250, 194, 194, 1) 0%,
+    rgba(218, 122, 122, 1) 44%,
+    rgba(218, 122, 122, 1) 58%,
+    rgba(250, 194, 194, 1) 100%
+  );
   padding: 12px 24px;
   display: flex;
   flex-direction: column;
   align-items: space-between;
+}
+
+.profiles-form-container {
+  background: rgb(199, 194, 250);
+  background: linear-gradient(
+    164deg,
+    rgba(199, 194, 250, 1) 0%,
+    rgba(122, 156, 218, 1) 44%,
+    rgba(122, 156, 218, 1) 58%,
+    rgba(199, 194, 250, 1) 100%
+  );
+  --primary-color: #3700ff;
 }
 
 .post-form-container > .x-large,
@@ -719,7 +775,7 @@ small {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  background-color: rgb(87, 79, 79);
+  background-color: rgb(0, 0, 0);
 }
 
 .profile-container {

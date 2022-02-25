@@ -20,12 +20,12 @@ const CommentForm = ({ _id, addComment }) => {
           name='text'
           cols='30'
           rows='5'
-          placeholder='Leave a Comment'
+          placeholder='Svara på inlägget'
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
         ></textarea>
-        <input type='submit' className='btn btn-primary my-1' value='Submit' />
+        <input type='submit' className='btn btn-primary my-1' value='Svara' />
       </form>
     </div>
   );

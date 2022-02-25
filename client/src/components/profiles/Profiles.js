@@ -17,21 +17,18 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <section className='whole-screen abstract-background center-x'>
-            <h1 className='x-large my-1'>Fishermen</h1>
-            <p className='lead my-1'>
-              <i className='fas fa-users'></i>
-              {''}
-              Browse and connect with other fishermen!
-            </p>
+          <section className='whole-screen abstract-background center-x light-font'>
+            <div className='post-form-container profiles-form-container'>
+              <h1 className='x-large'>Elever</h1>
+            </div>
 
-            <div className='content-cluster px-2'>
+            <div className='profiles'>
               {profiles !== undefined ? (
                 profiles.map((profile) => (
                   <ProfileItem key={profile._id} profile={profile} />
                 ))
               ) : (
-                <h4>No profiles found...</h4>
+                <h4>Inga elever hittade...</h4>
               )}
             </div>
           </section>

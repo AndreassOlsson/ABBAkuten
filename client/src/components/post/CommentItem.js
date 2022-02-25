@@ -7,11 +7,11 @@ import { deleteComment } from '../../actions/post';
 
 const CommentItem = ({ _id, comment, auth, deleteComment }) => {
   return (
-    <div className='post comment shadow'>
+    <div className='post comment'>
       <div className='postAuthor'>
         <Link to={`/profile/${comment.user}`}>
           <img src={comment.avatar} alt='' className='round avatar' />
-          <h5 className='primary-font'>{comment.name}</h5>
+          <h5 className='primary-font break-name'>{comment.name}</h5>
         </Link>
       </div>
       <p className='postText'>{comment.text}</p>

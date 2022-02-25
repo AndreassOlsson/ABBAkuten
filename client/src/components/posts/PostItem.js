@@ -18,7 +18,7 @@ const PostItem = ({
       <div className='postAuthor'>
         <Link to={`/profile/${user}`}>
           <img src={avatar} alt='' className='round avatar' />
-          <h5 className='primary-font'>{name}</h5>
+          <h5 className='primary-font break-name'>{name}</h5>
         </Link>
       </div>
 

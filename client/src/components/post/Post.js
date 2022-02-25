@@ -23,10 +23,10 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
         </Link>
       </div>
 
-      <section className='whole-screen abstract-background center-x light-font'>
+      <section className='whole-screen abstract-background center-x light-font posts'>
         <PostItem post={post} showActions={false} />
         <CommentForm _id={post._id} />
-        <div className='posts'>
+        <div className=''>
           {post.comments.map((comment) => (
             <CommentItem key={comment._id} comment={comment} _id={post._id} />
           ))}
