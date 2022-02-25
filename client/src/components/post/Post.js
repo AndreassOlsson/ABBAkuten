@@ -19,7 +19,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     <Fragment>
       <div className='top-left'>
         <Link to='/posts' className='btn btn-light'>
-          Back To Posts
+          Tillbaka
         </Link>
       </div>
 

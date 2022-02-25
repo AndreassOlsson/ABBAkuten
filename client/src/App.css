@@ -369,7 +369,7 @@ small {
   align-items: inherit;
   flex-direction: inherit;
   text-align: center;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(100px);
   border-radius: 0 0 24px 24px;
 }
 
@@ -380,29 +380,30 @@ small {
   z-index: 1;
 }
 
+.posts {
+  padding: 24px 0 72px 0;
+}
+
 .post {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 80vw;
-  max-height: 160px;
-  padding: 24px 12px;
+  max-height: 170px;
+  padding: 12px 24px 12px 12px;
   background-color: rgb(50, 50, 50);
   border-radius: 48px;
-  margin: 12px 0;
-}
-.posts {
-  padding: 24px 0 72px 0;
+  margin: 24px 0;
 }
 
 .postAuthor {
   grid-area: 1 / 1 / 5 / 3;
   text-align: center;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 .postText {
@@ -420,15 +421,18 @@ small {
 }
 
 .post-form-container {
-  max-width: 1100px;
-  width: 80vw;
-  background-color: rgb(50, 50, 50);
+  height: 360px;
+  width: 100vw;
+  background: rgb(218, 177, 177);
+  background: linear-gradient(
+    164deg,
+    rgba(218, 177, 177, 1) 0%,
+    rgba(228, 108, 108, 1) 52%
+  );
   padding: 12px 24px;
-  margin-top: 24px;
-  border-radius: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
 }
 
 .post-form-container > .x-large,
@@ -443,18 +447,26 @@ small {
   margin-left: 24px;
 }
 
+.post-form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .post-form form textarea {
-  max-width: 1000px;
-  width: 90vw;
-  min-height: 30px;
-  margin-top: 12px;
+  width: 100vw;
+  max-width: 900px;
+  height: calc(3.5rem + 3px);
+  margin: 12px 0 6px 0;
   color: var(--light-font);
   border: none;
   border-bottom: 3px solid #c5c5c5;
-  background-color: rgb(20, 20, 20);
-  padding-left: 6px;
-  border-radius: 0 24px 0 24px;
-
+  background-color: transparent;
+  padding-top: 1rem;
+  border-radius: 0;
+  font-size: 1.5rem;
+  text-align: center;
   overflow: auto;
   outline: none;
 
@@ -478,6 +490,7 @@ small {
   text-indent: 0;
   padding-left: 0;
   margin-left: 0;
+  color: var(--light-font);
 }
 
 .post-form textarea:-moz-placeholder {
@@ -485,6 +498,7 @@ small {
   text-indent: 0;
   padding-left: 0;
   margin-left: 0;
+  color: var(--light-font);
 }
 
 .post-form textarea::-moz-placeholder {
@@ -492,18 +506,21 @@ small {
   text-indent: 0;
   padding-left: 0;
   margin-left: 0;
+  color: var(--light-font);
 }
 
 .post-form textarea:-ms-input-placeholder {
   text-indent: 0;
   padding-left: 0;
   margin-left: 0;
+  color: var(--light-font);
 }
 
 .post-form textarea::placeholder {
   text-indent: 0;
   padding-left: 0;
   margin-left: 0;
+  color: var(--light-font);
 }
 
 .parent {
@@ -702,7 +719,7 @@ small {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(87, 79, 79);
 }
 
 .profile-container {

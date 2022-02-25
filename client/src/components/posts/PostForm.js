@@ -20,12 +20,16 @@ const PostForm = ({ addPost }) => {
           name='text'
           cols='30'
           rows='5'
-          placeholder='Vad har du på hjärtat?'
+          placeholder='Vad har du på hjärtat? - Dela med dig!'
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
         ></textarea>
-        <input type='submit' className='btn btn-primary my-1' value='Submit' />
+        <input
+          type='submit'
+          className='btn btn-primary my-1'
+          value='Skapa inlägg'
+        />
       </form>
     </div>
   );

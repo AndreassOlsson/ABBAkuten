@@ -39,7 +39,7 @@ const PostItem = ({
               <i className='fas fa-thumbs-down'></i>
             </button>
             <Link to={`/post/${_id}`} className='smallerFont btn btn-primary '>
-              Disucss <span>{comments.length > 0 ? comments.length : ''}</span>
+              Svara <span>{comments.length > 0 ? comments.length : ''}</span>
             </Link>
             {!auth.loading && user === auth.user._id && (
               <button
