@@ -30,9 +30,9 @@ const Login = ({ login, isAuthenticated }) => {
     <Fragment>
       <section className='whole-screen center-content abstract-background'>
         <div className='content-card shadow'>
-          <h1 className='large'>Login</h1>
+          <h1 className='large'>Logga in</h1>
           <p className='lead black'>
-            <i className='fas fa-user'></i>Login to your account
+            <i className='fas fa-user'></i>Logga in på ditt konto
           </p>
           <form className='form' onSubmit={(e) => onSubmit(e)}>
             <div className='form-group'>
@@ -48,7 +48,7 @@ const Login = ({ login, isAuthenticated }) => {
             <div className='form-group'>
               <input
                 type='password'
-                placeholder='Password'
+                placeholder='Lösenord'
                 name='password'
                 value={password}
                 onChange={(e) => onChange(e)}
@@ -59,13 +59,13 @@ const Login = ({ login, isAuthenticated }) => {
             <input
               type='submit'
               className='my-2 btn btn-primary'
-              value='Login'
+              value='Logga in'
             />
           </form>
           <p className='black'>
-            Don´t have an account?{' '}
+            Har du inget konto?{' '}
             <Link to='/register' className='link-primary'>
-              Sign up
+              Registrera
             </Link>
           </p>
         </div>

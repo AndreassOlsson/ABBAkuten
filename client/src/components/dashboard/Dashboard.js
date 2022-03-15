@@ -1,15 +1,15 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteAccount, getCurrentProfile } from '../../actions/profile';
+import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
-import { Link } from 'react-router-dom';
-import DashboardActions from './DashboardActions';
-import ProfileTop from '../profile/ProfileTop';
+import DashboardProfile from './DashboardProfile';
+import DashboardLatestPosts from './DashboardLatestPosts';
+import DashboardLatestProfiles from './DashboardLatestProfiles';
 
 const Dashboard = ({
   getCurrentProfile,
-  deleteAccount,
   auth: { user },
   profile: { profile, loading },
 }) => {
@@ -17,41 +17,36 @@ const Dashboard = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
 
-  return loading && profile === null ? (
+  return loading ? (
     <Spinner />
   ) : (
     <Fragment>
-      <section className={profile === null ? '' : 'whole-screen'}>
-        <div className='profile-container center-x'>
-          {profile !== null ? (
-            <Fragment>
-              <ProfileTop profile={profile} />
-              <div className='btns '>
-                <DashboardActions />
-                <button
-                  className='btn btn-danger added-margin'
-                  onClick={() => deleteAccount()}
-                >
-                  <i className='fas fa-user-minus'></i>
-                  {''}
-                  Radera konto
-                </button>
+      <section className='whole-screen abstract-background center-x light-font'>
+        <div className='dashboard-container'>
+          <div>
+            {profile !== null ? (
+              <div className='dashboard-content'>
+                <DashboardProfile
+                  key={profile._id}
+                  profile={profile}
+                  hasProfile={true}
+                />
               </div>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <div className='noProfilePage'>
-                <div className='bruh'>
-                  <p className='lead light-font'>
-                    Du har inte skapat en profil än :/ :(
-                  </p>
-                  <Link to='/create-profile' className='btn btn-primary my-1'>
-                    Skapa profil
-                  </Link>
-                </div>
+            ) : (
+              <div className='dashboard-content'>
+                <h3>Välkommen</h3>
+                <Link to='/create-profile' className='btn btn-primary'>
+                  <i className='fas fa-user-circle'></i>Skapa Profil
+                </Link>
               </div>
-            </Fragment>
-          )}
+            )}
+            <div className='dashboard-content'>
+              <DashboardLatestProfiles />
+            </div>
+          </div>
+          <div className='dashboard-content'>
+            <DashboardLatestPosts />
+          </div>
         </div>
       </section>
     </Fragment>
@@ -62,7 +57,6 @@ Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
-  deleteAccount: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -72,5 +66,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getCurrentProfile,
-  deleteAccount,
 })(Dashboard);

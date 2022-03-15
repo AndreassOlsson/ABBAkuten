@@ -35,15 +35,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     <Fragment>
       <section className='whole-screen center-content abstract-background'>
         <div className='content-card shadow'>
-          <h1 className='large'>Sign Up</h1>
+          <h1 className='large'>Registrera</h1>
           <p className='lead black'>
-            <i className='fas fa-user'></i>Create your account
+            <i className='fas fa-user'></i>Skapa ditt konto
           </p>
           <form className='form' onSubmit={(e) => onSubmit(e)}>
             <div className='form-group'>
               <input
                 type='text'
-                placeholder='Name'
+                placeholder='Namn'
                 name='name'
                 value={name}
                 onChange={(e) => onChange(e)}
@@ -63,7 +63,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <div className='form-group'>
               <input
                 type='password'
-                placeholder='Password'
+                placeholder='Lösenord'
                 name='password'
                 value={password}
                 onChange={(e) => onChange(e)}
@@ -74,7 +74,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <div className='form-group'>
               <input
                 type='password'
-                placeholder='Confirm Password'
+                placeholder='Bekräfta Lösenord'
                 name='password_confirm'
                 value={password_confirm}
                 onChange={(e) => onChange(e)}
@@ -85,13 +85,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <input
               type='submit'
               className='my-2 btn btn-primary'
-              value='Register'
+              value='Registera'
             />
           </form>
           <p className='black'>
-            Already have an account?{' '}
+            Har du redan ett konto?{' '}
             <Link to='/login' className='link-primary'>
-              Sign in
+              Logga in
             </Link>
           </p>
         </div>

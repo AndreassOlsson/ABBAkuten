@@ -6,10 +6,6 @@ const ProfileItem = ({
   profile: {
     user: { _id, name, avatar },
     grade,
-    focus,
-    favoriteSubject,
-    helpingSubjects,
-    bio,
   },
 }) => {
   const history = useHistory();

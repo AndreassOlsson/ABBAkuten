@@ -24,7 +24,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
       </div>
 
       <section className='whole-screen abstract-background center-x light-font posts'>
-        <PostItem post={post} showActions={false} />
+        <PostItem post={post} showActions={false} isComment={true} />
         <CommentForm _id={post._id} />
         <div className=''>
           {post.comments.map((comment) => (

@@ -12,6 +12,7 @@ const PostItem = ({
   deletePost,
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions,
+  isComment,
 }) => {
   return (
     <div className='post'>
@@ -22,7 +23,13 @@ const PostItem = ({
         </Link>
       </div>
 
-      <p className='postText'>{text}</p>
+      {showActions || isComment ? (
+        <p className='postText'>{text}</p>
+      ) : (
+        <Link className='postText light-font' to={`/post/${_id}`}>
+          <p className='postText'>{text}</p>
+        </Link>
+      )}
 
       <div className='postActions'>
         <h6 className='grey-font'>

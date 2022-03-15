@@ -98,7 +98,8 @@ footer {
   padding: 12px 0;
 }
 
-.pointer:hover {
+.pointer:hover,
+.interactive {
   cursor: pointer;
 }
 
@@ -310,6 +311,53 @@ small {
   padding: 60px 40px;
 }
 
+.dashboard-container {
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.dashboard-content {
+  flex: 0 0 500px;
+  box-shadow: 0 0 0 3px #c5c5c5;
+  background: rgb(50, 50, 50);
+  border-radius: 24px;
+  padding: 24px 48px;
+  margin: 12px;
+  height: 100%;
+}
+.dashboard-profile-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-latest-posts {
+  width: 100%;
+  overflow: scroll;
+}
+.dashboard-latest-posts .post {
+  max-width: 452px;
+  width: inherit;
+  background-color: rgb(35, 35, 35);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.dashboard-latest-profiles {
+  padding-top: 12px;
+  max-width: 300px;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-latest-profiles > .profileItem {
+  flex: 1 1 50px;
+  margin: 0;
+}
+
 .profile {
   margin: 24px;
   display: flex;
@@ -417,7 +465,8 @@ small {
 }
 
 .posts,
-.profiles {
+.profiles,
+.dashboard-container {
   padding: 24px 0 72px 0;
 }
 
@@ -451,6 +500,9 @@ small {
   grid-area: 1 / 3 / 4 / 13;
   overflow: scroll;
 }
+.dashboard-latest-posts .postText:hover {
+  color: var(--grey-font);
+}
 .postActions {
   grid-area: 4 / 3 / 5 / 11;
 }
@@ -459,20 +511,7 @@ small {
 .profiles-form-container {
   height: 360px;
   width: 100vw;
-  background: rgb(218, 177, 177);
-  background: linear-gradient(
-    164deg,
-    rgba(218, 177, 177, 1) 0%,
-    rgba(228, 108, 108, 1) 52%
-  );
-  background: rgb(250, 194, 194);
-  background: linear-gradient(
-    164deg,
-    rgba(250, 194, 194, 1) 0%,
-    rgba(218, 122, 122, 1) 44%,
-    rgba(218, 122, 122, 1) 58%,
-    rgba(250, 194, 194, 1) 100%
-  );
+  background-color: rgb(50, 50, 50);
   padding: 12px 24px;
   display: flex;
   flex-direction: column;
@@ -480,15 +519,7 @@ small {
 }
 
 .profiles-form-container {
-  background: rgb(199, 194, 250);
-  background: linear-gradient(
-    164deg,
-    rgba(199, 194, 250, 1) 0%,
-    rgba(122, 156, 218, 1) 44%,
-    rgba(122, 156, 218, 1) 58%,
-    rgba(199, 194, 250, 1) 100%
-  );
-  --primary-color: #3700ff;
+  background-color: rgb(50, 50, 50);
 }
 
 .post-form-container > .x-large,
