@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -20,7 +21,10 @@ const DashboardLatestProfiles = ({
         <Spinner />
       ) : (
         <Fragment>
-          <h3>Nya profiler</h3>
+          <Link to='/profiles' className='light-font'>
+            <h3>Nya Elever</h3>
+          </Link>
+
           <div className='dashboard-latest-profiles'>
             {profiles !== undefined ? (
               profiles

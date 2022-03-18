@@ -17,7 +17,7 @@ const ProfileItem = ({
   return (
     <div className='profileItem' onClick={navigate}>
       <img src={avatar} alt='' className='round avatar' />
-      <h5>{name}</h5>
+      <h5 className='break-name'>{name}</h5>
       <h5 className='primary-font'>{grade}</h5>
     </div>
   );

@@ -23,28 +23,30 @@ const Dashboard = ({
     <Fragment>
       <section className='whole-screen abstract-background center-x light-font'>
         <div className='dashboard-container'>
-          <div>
-            {profile !== null ? (
-              <div className='dashboard-content'>
+          <div className='dashboard-divider'>
+            <div className='dashboard-content'>
+              {profile !== null ? (
                 <DashboardProfile
                   key={profile._id}
                   profile={profile}
                   hasProfile={true}
                 />
-              </div>
-            ) : (
-              <div className='dashboard-content'>
-                <h3>Välkommen</h3>
-                <Link to='/create-profile' className='btn btn-primary'>
-                  <i className='fas fa-user-circle'></i>Skapa Profil
-                </Link>
-              </div>
-            )}
+              ) : (
+                <Fragment>
+                  <h3>Välkommen</h3>
+                  <Link to='/create-profile' className='btn btn-primary'>
+                    <i className='fas fa-user-circle'></i>Skapa Profil
+                  </Link>
+                </Fragment>
+              )}
+            </div>
+
             <div className='dashboard-content'>
               <DashboardLatestProfiles />
             </div>
           </div>
-          <div className='dashboard-content'>
+
+          <div className='dashboard-content dashboard-posts-parent'>
             <DashboardLatestPosts />
           </div>
         </div>

@@ -99,8 +99,9 @@ footer {
 }
 
 .pointer:hover,
-.interactive {
+.interactive:hover {
   cursor: pointer;
+  color: var(--primary-color);
 }
 
 .light-font {
@@ -114,11 +115,6 @@ footer {
 }
 .primary-font {
   color: var(--primary-color);
-}
-.break-name {
-  word-spacing: 100px;
-  max-height: 50px;
-  overflow: scroll;
 }
 
 .x-large {
@@ -314,48 +310,84 @@ small {
 .dashboard-container {
   overflow: auto;
   display: flex;
+
   flex-flow: row wrap;
   flex-wrap: wrap;
+
   justify-content: center;
   align-items: flex-start;
+  width: 75vw;
+  max-width: 900px;
+  flex-shrink: 2;
+}
+.dashboard-divider {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
 }
 .dashboard-content {
-  flex: 0 0 500px;
   box-shadow: 0 0 0 3px #c5c5c5;
   background: rgb(50, 50, 50);
   border-radius: 24px;
   padding: 24px 48px;
   margin: 12px;
-  height: 100%;
+}
+.dashboard-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-evenly;
 }
 .dashboard-profile-actions {
   display: flex;
   justify-content: space-between;
 }
+.dashboard-posts-parent {
+  flex: 1 1 500px;
+}
 .dashboard-latest-posts {
-  width: 100%;
   overflow: scroll;
 }
 .dashboard-latest-posts .post {
-  max-width: 452px;
-  width: inherit;
+  width: 100%;
   background-color: rgb(35, 35, 35);
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  border-radius: 36px;
+}
+.dashboard-latest-posts .post .postText {
+  margin: inherit inherit 0 0;
 }
 .dashboard-latest-profiles {
   padding-top: 12px;
-  max-width: 300px;
   overflow: auto;
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .dashboard-latest-profiles > .profileItem {
   flex: 1 1 50px;
   margin: 0;
+}
+
+.dashboard-content {
+  padding: 12px 24px;
+}
+.dashboard-latest-posts .post {
+  border-radius: 24px;
+
+  max-height: 200px;
+}
+.dashboard-latest-posts .post .postText {
+  max-height: 5rem;
+}
+.break-name {
+  word-spacing: 100px;
+  max-height: 3rem;
+  max-width: 120px;
+  overflow: scroll;
 }
 
 .profile {
@@ -980,6 +1012,12 @@ input:-webkit-autofill:active {
   li {
     font-size: 1rem;
   }
+  .dashboard-container {
+    width: 80vw;
+  }
+  .dashboard-latest-posts .post {
+    min-width: 375px;
+  }
 }
 .flex-list > li {
   max-height: 1rem;
@@ -1011,7 +1049,6 @@ input:-webkit-autofill:active {
   }
   .postText {
     font-size: 0.8rem;
-    margin: 6px 0 0 6px;
   }
   .avatar {
     max-width: 60px;
@@ -1068,6 +1105,16 @@ input:-webkit-autofill:active {
   }
   .div7 {
     grid-area: 10 / 3 / 11 / 12;
+  }
+
+  .dashboard-container {
+    width: 92vw;
+  }
+  .dashboard-content {
+    padding: 12px 24px;
+  }
+  .dashboard-latest-posts .post {
+    min-width: inherit;
   }
 }
 
@@ -1154,5 +1201,20 @@ i {
   }
   #adjust-helpingSubjects-header {
     margin-top: -6px;
+  }
+  .dashboard-container {
+    width: 98vw;
+  }
+  .dashboard-content {
+    padding: 12px 24px;
+  }
+  .dashboard-latest-posts .post {
+    border-radius: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-height: 120px;
+  }
+  .dashboard-latest-posts .post .postText {
+    max-height: 4rem;
   }
 }

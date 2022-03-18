@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -15,7 +16,10 @@ const DashboardLatestPosts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h3>Senaste Inläggen</h3>
+      <Link to='/posts' className='light-font'>
+        <h3>Senaste Inläggen</h3>
+      </Link>
+
       <div className='dashboard-latest-posts'>
         {posts.splice(0, 3).map((post) => (
           <PostItem key={post._id} post={post} showActions={false} />
