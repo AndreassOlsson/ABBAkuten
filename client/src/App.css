@@ -471,6 +471,20 @@ small {
   border-radius: 0 0 24px 24px;
   box-shadow: 0 0 0 3px #c5c5c5;
 }
+
+.td {
+  background-image: url('./img/teknisk-design.jpg');
+}
+.na {
+  background-image: url('./img/natur.jpg');
+}
+.in {
+  background-image: url('./img/internationell.jpg');
+}
+.nofocus {
+  background-image: url('./img/blank.jpg');
+}
+
 .curtains {
   height: 50vh;
   width: 100vw;
@@ -485,7 +499,7 @@ small {
   align-items: inherit;
   flex-direction: inherit;
   text-align: center;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(0px);
   border-radius: 0 0 24px 24px;
 }
 

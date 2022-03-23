@@ -14,7 +14,7 @@ const Footer = () => {
           ande_o
         </a>
         <p className='light-font'>andreas.o.olsson@outlook.com</p>
-        <p className='banner light-font'>© 2021 Andreas Olsson</p>
+        <p className='banner light-font'>© 2022 Andreas Olsson</p>
       </div>
     </footer>
   );

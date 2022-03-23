@@ -14,7 +14,9 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   }, [getPost]);
 
   return loading || post === null ? (
-    <Spinner />
+    <section className='whole-screen abstract-background center-x light-font'>
+      <Spinner />
+    </section>
   ) : (
     <Fragment>
       <div className='top-left'>

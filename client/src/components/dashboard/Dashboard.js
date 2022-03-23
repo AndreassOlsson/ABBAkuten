@@ -18,7 +18,9 @@ const Dashboard = ({
   }, [getCurrentProfile]);
 
   return loading ? (
-    <Spinner />
+    <section className='whole-screen abstract-background center-x light-font'>
+      <Spinner />
+    </section>
   ) : (
     <Fragment>
       <section className='whole-screen abstract-background center-x light-font'>

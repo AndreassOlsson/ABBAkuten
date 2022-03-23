@@ -19,11 +19,13 @@ const Profile = ({
   return (
     <Fragment>
       {profile === null || loading ? (
-        <Spinner />
+        <section className='whole-screen abstract-background center-x light-font'>
+          <Spinner />
+        </section>
       ) : (
         <Fragment>
           <div className='top-left'>
-            <Link to='/profiles' className='btn btn-light'>
+            <Link to='/dashboard' className='btn btn-light'>
               Tillbaka
             </Link>
             {auth.isAuthenticated &&

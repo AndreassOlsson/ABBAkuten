@@ -16,12 +16,12 @@ const Landing = ({ isAuthenticated }) => {
       <section className='landing dark-overlay'>
         <div>
           <div className='landing-content'>
-            <h1 className='x-large light-font'>Välkommen till ABB-Akuten</h1>
+            <h1 className='x-large light-font'>Välkommen till ABB Akuten</h1>
             <p className='lead light-font'>
-              ABB-Akuten är ett läxhjälpsforum för och av eleverna på
-              ABBgymnasiet i Västerås. Här kan du få hjälp med dina läxor av
-              både lärare och elever förutsatt att du själv hjälper andra elever
-              när du kan!
+              ABB Akuten är ett läxhjälpsforum för och av eleverna på ABB
+              Gymnasiet i Västerås. Här kan du få hjälp med dina läxor av både
+              lärare och elever förutsatt att du själv hjälper andra elever när
+              du kan!
             </p>
             <div className='btns'>
               <Link to='/register' className='btn btn-primary'>

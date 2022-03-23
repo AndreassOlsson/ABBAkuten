@@ -11,10 +11,22 @@ const ProfileTop = ({
     bio,
   },
 }) => {
+  const handleClassName = () => {
+    if (focus.toLowerCase() === 'teknisk design') {
+      return ' td';
+    } else if (focus.toLowerCase() === 'natur') {
+      return ' na';
+    } else if (focus.toLowerCase() === 'internationell') {
+      return ' in';
+    } else {
+      return ' nofocus';
+    }
+  };
+
   return (
     <Fragment>
       <div className='curtains'>
-        <div className='hero light-font'>
+        <div className={'hero light-font' + handleClassName()}>
           <div className='bg-blur'>
             <h1 className='large'>{name}</h1>
             <p
