@@ -89,13 +89,18 @@ const EditProfile = ({
               </small>
             </div>
             <div className='form-group'>
-              <input
-                type='text'
-                placeholder='Inriktning'
-                name='focus'
-                value={focus}
-                onChange={(e) => onChange(e)}
-              />
+              <select name='focus' onChange={(e) => onChange(e)}>
+                <option value='' selected disabled hidden>
+                  {focus === 'nofocus' && 'Inte valt ännu'}
+                  {focus === 'teknisk design' && 'Teknisk Design'}
+                  {focus === 'natur' && 'Naturvetenskap'}
+                  {focus === 'internationell' && 'Internationell'}
+                </option>
+                <option value='nofocus'>Inte valt ännu</option>
+                <option value='teknisk design'>Teknisk Design</option>
+                <option value='natur'>Naturvetenskap</option>
+                <option value='internationell'>Internationell</option>
+              </select>
               <small className='form-text'>Vilken inriktning går du?</small>
             </div>
             <div className='form-group'>

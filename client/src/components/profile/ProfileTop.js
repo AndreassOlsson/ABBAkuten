@@ -17,9 +17,9 @@ const ProfileTop = ({
     } else if (focus.toLowerCase() === 'natur') {
       return ' na';
     } else if (focus.toLowerCase() === 'internationell') {
-      return ' in';
+      return ' in dark-font';
     } else {
-      return ' nofocus';
+      return ' nofocus dark-font';
     }
   };
 
@@ -34,7 +34,7 @@ const ProfileTop = ({
                 focus
                   ? focus.toString().replace(/ /, '-').toLowerCase() +
                     ' heavy-font'
-                  : ''
+                  : ' nofocus npheavy-font'
               }
             >
               {focus}
@@ -58,7 +58,7 @@ const ProfileTop = ({
                 focus
                   ? focus.toString().replace(/ /, '-').toLowerCase() +
                     ' heavy-font'
-                  : ''
+                  : 'nofocus heavy-font'
               }
             >
               {favoriteSubject}
@@ -77,7 +77,7 @@ const ProfileTop = ({
                       focus
                         ? focus.toString().replace(/ /, '-').toLowerCase() +
                           ' fas fa-check'
-                        : ' fas fa-check'
+                        : ' nofocus fas fa-check'
                     }
                   ></i>
                 </li>

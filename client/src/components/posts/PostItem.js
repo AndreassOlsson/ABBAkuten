@@ -10,7 +10,7 @@ const PostItem = ({
   addLike,
   removeLike,
   deletePost,
-  post: { _id, text, name, avatar, user, likes, comments, date },
+  post: { _id, text, tag, name, avatar, user, likes, comments, date },
   showActions,
   isComment,
 }) => {
@@ -33,7 +33,8 @@ const PostItem = ({
 
       <div className='postActions'>
         <h6 className='grey-font'>
-          Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+          Posted on <Moment format='YYYY/MM/DD'>{date}</Moment> - {''}{' '}
+          <span className='primary-font'>{tag}</span>
         </h6>
 
         {showActions && (

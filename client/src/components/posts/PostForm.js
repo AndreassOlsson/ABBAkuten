@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/post';
 
-const PostForm = ({ addPost }) => {
+const PostForm = ({ addPost, tag }) => {
   const [text, setText] = useState('');
 
   return (
@@ -12,7 +12,7 @@ const PostForm = ({ addPost }) => {
         className='form'
         onSubmit={(e) => {
           e.preventDefault();
-          addPost({ text });
+          addPost({ text, tag });
           setText('');
         }}
       >

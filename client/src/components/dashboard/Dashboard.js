@@ -17,13 +17,30 @@ const Dashboard = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
 
+  const handleClassName = () => {
+    if (profile.focus.toLowerCase() === 'teknisk design') {
+      return ' td';
+    } else if (profile.focus.toLowerCase() === 'natur') {
+      return ' na';
+    } else if (profile.focus.toLowerCase() === 'internationell') {
+      return ' in';
+    } else if (profile.focus.toLowerCase() === 'nofocus') {
+      return ' nofocus';
+    }
+  };
+
   return loading ? (
     <section className='whole-screen abstract-background center-x light-font'>
       <Spinner />
     </section>
   ) : (
     <Fragment>
-      <section className='whole-screen abstract-background center-x light-font'>
+      <section
+        className={
+          'whole-screen abstract-background center-x light-font ' +
+          handleClassName()
+        }
+      >
         <div className='dashboard-container'>
           <div className='dashboard-divider'>
             <div className='dashboard-content'>
