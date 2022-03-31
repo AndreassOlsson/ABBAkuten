@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
+import { useHistory } from 'react-router-dom';
 
 const PostItem = ({
   auth,
@@ -13,7 +14,15 @@ const PostItem = ({
   post: { _id, text, tag, name, avatar, user, likes, comments, date },
   showActions,
   isComment,
+  changeChannel,
 }) => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/posts/');
+    changeChannel(tag);
+  };
+
   return (
     <div className='post'>
       <div className='postAuthor'>
@@ -33,8 +42,13 @@ const PostItem = ({
 
       <div className='postActions'>
         <h6 className='grey-font'>
-          Posted on <Moment format='YYYY/MM/DD'>{date}</Moment> - {''}{' '}
-          <span className='primary-font'>{tag}</span>
+          Skapad <Moment format='YYYY/MM/DD'>{date}</Moment> i kanalen{' '}
+          <Link
+            className='link-standard'
+            to={{ pathname: `/posts/`, state: { tag } }}
+          >
+            {tag}
+          </Link>
         </h6>
 
         {showActions && (
@@ -46,14 +60,11 @@ const PostItem = ({
             <button className='btn' onClick={(e) => removeLike(_id)}>
               <i className='fas fa-thumbs-down'></i>
             </button>
-            <Link to={`/post/${_id}`} className='smallerFont btn btn-primary '>
+            <Link to={`/post/${_id}`} className='link-btn'>
               Svara <span>{comments.length > 0 ? comments.length : ''}</span>
             </Link>
             {!auth.loading && user === auth.user._id && (
-              <button
-                className='btn btn-danger'
-                onClick={(e) => deletePost(_id)}
-              >
+              <button className='link-btn' onClick={(e) => deletePost(_id)}>
                 X
               </button>
             )}
@@ -74,6 +85,7 @@ PostItem.propTypes = {
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
   deletePost: PropTypes.func.isRequired,
+  changeChannel: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

@@ -73,10 +73,6 @@ li {
   font-weight: 500;
 }
 
-.smallerFont {
-  font-size: 1rem;
-}
-
 .miniFont {
   font-size: 0.7rem;
   font-weight: 550;
@@ -246,6 +242,22 @@ small {
 
 .link-primary {
   color: var(--primary-color);
+}
+
+.link-standard {
+  font-size: inherit;
+  color: var(--light-font);
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.link-btn {
+  color: var(--light-color);
+  background-color: transparent;
+  border: none;
+  margin: 0 0 0 6px;
+  font-weight: 550;
+  cursor: pointer;
 }
 
 .lead {
@@ -549,6 +561,12 @@ small {
 }
 .postActions {
   grid-area: 4 / 3 / 5 / 11;
+  font-size: 1.2rem;
+}
+.postActions .btn {
+  height: 2rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .post-form-container,
@@ -771,7 +789,7 @@ small {
 }
 
 .social-icons {
-  margin: 12px 0 72px 0;
+  margin: 12px 0 120px 0;
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;

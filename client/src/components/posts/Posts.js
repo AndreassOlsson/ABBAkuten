@@ -6,12 +6,18 @@ import PostItem from './PostItem';
 import PostForm from './PostForm';
 import { getPosts } from '../../actions/post';
 
-const Posts = ({ getPosts, post: { posts, loading } }) => {
+const Posts = ({ location, getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
 
   const [tag, setTag] = useState('');
+
+  useEffect(() => {
+    if (location.state !== undefined) {
+      setTag(location.state.tag);
+    }
+  }, [location]);
 
   return loading ? (
     <section className='whole-screen abstract-background center-x light-font'>
@@ -22,16 +28,20 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
       <section className='whole-screen abstract-background center-x light-font'>
         <div className='post-form-container'>
           <h1 className='x-large'>Inlägg</h1>
-          <select name='tag' onChange={(e) => setTag(e.target.value)}>
+          <select
+            name='tag'
+            value={tag}
+            onChange={(e) => setTag(e.target.value)}
+          >
             <option value=''>Alla inlägg</option>
-            <option value='general'>Allmänt</option>
+            <option value='allmänt'>Allmänt</option>
             <option value='engelska'>Engelska</option>
             <option value='internationell'>Internationell</option>
             <option value='matematik'>Matematik</option>
             <option value='naturvetenskap'>Naturvetenskap</option>
             <option value='svenska'>Svenska</option>
             <option value='teknik'>Teknik</option>
-            <option value='thoughts'>
+            <option value='åsikter, tankar och förbättringsförslag'>
               Åsikter, Tankar {'&'} Förbättringsförslag
             </option>
           </select>
