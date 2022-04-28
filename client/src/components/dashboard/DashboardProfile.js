@@ -22,7 +22,7 @@ const DashboardProfile = ({
       <Fragment>
         <img
           src={avatar}
-          alt=''
+          alt='Profile picture'
           className='round avatar interactive'
           onClick={navigate}
         />

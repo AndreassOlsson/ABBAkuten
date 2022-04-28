@@ -38,6 +38,7 @@ export default function foo(state = initialState, action) {
       return {
         ...state,
         profile: null,
+        profiles: [],
         loading: false,
       };
     default:

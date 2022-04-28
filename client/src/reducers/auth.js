@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   ACCOUNT_DELETED,
+  CLEAR_USER,
 } from '../actions/types';
 
 const initalState = {
@@ -46,6 +47,12 @@ export default function foo(state = initalState, action) {
         ...state,
         token: null,
         isAuthenticated: false,
+        loading: false,
+      };
+    case CLEAR_USER:
+      return {
+        ...state,
+        user: null,
         loading: false,
       };
     default:

@@ -9,6 +9,8 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   CLEAR_PROFILE,
+  CLEAR_POSTS,
+  CLEAR_USER,
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -107,5 +109,11 @@ export const logout = () => (dispatch) => {
   });
   dispatch({
     type: CLEAR_PROFILE,
+  });
+  dispatch({
+    type: CLEAR_POSTS,
+  });
+  dispatch({
+    type: CLEAR_USER,
   });
 };

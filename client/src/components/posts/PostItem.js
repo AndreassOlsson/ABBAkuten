@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
-import { useHistory } from 'react-router-dom';
 
 const PostItem = ({
   auth,
@@ -14,25 +13,17 @@ const PostItem = ({
   post: { _id, text, tag, name, avatar, user, likes, comments, date },
   showActions,
   isComment,
-  changeChannel,
 }) => {
-  const history = useHistory();
-
-  const handleClick = () => {
-    history.push('/posts/');
-    changeChannel(tag);
-  };
-
   return (
     <div className='post'>
       <div className='postAuthor'>
         <Link to={`/profile/${user}`}>
-          <img src={avatar} alt='' className='round avatar' />
+          <img src={avatar} alt='Profile picture' className='round avatar' />
           <h5 className='primary-font break-name'>{name}</h5>
         </Link>
       </div>
 
-      {showActions || isComment ? (
+      {isComment ? (
         <p className='postText'>{text}</p>
       ) : (
         <Link className='postText light-font' to={`/post/${_id}`}>

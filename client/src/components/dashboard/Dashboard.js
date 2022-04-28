@@ -18,15 +18,7 @@ const Dashboard = ({
   }, [getCurrentProfile]);
 
   const handleClassName = () => {
-    if (profile.focus.toLowerCase() === 'teknisk design') {
-      return ' td';
-    } else if (profile.focus.toLowerCase() === 'natur') {
-      return ' na';
-    } else if (profile.focus.toLowerCase() === 'internationell') {
-      return ' in';
-    } else if (profile.focus.toLowerCase() === 'nofocus') {
-      return ' nofocus';
-    }
+    return ' nofocus';
   };
 
   return loading ? (

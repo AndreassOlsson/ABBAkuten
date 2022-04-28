@@ -7,6 +7,7 @@ import {
   ADD_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
+  CLEAR_POSTS,
 } from '../actions/types';
 
 const initialState = {
@@ -74,6 +75,12 @@ export default function foo(state = initialState, action) {
             (comment) => comment._id !== payload
           ),
         },
+      };
+    case CLEAR_POSTS:
+      return {
+        ...state,
+        posts: [],
+        loading: false,
       };
     default:
       return state;

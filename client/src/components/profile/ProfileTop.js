@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import nofocus from '../../img/ferhat.jpg';
 
 const ProfileTop = ({
   profile: {
@@ -42,8 +43,8 @@ const ProfileTop = ({
               {grade}
             </p>
             <img
-              src={avatar}
-              alt=''
+              src={nofocus}
+              alt='Profile picture'
               className='round medium-avatar overlapping'
             />
           </div>
