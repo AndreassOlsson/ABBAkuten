@@ -12,12 +12,17 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
   }, [getPosts]);
 
   const [tag, setTag] = useState('');
+  const [numberOfPosts, setNumberOfPosts] = useState(10);
 
   useEffect(() => {
     if (location.state !== undefined) {
       setTag(location.state.tag);
     }
   }, [location]);
+
+  useEffect(() => {
+    setNumberOfPosts(10);
+  }, [tag, setTag]);
 
   return loading ? (
     <section className='whole-screen abstract-background center-x light-font'>
@@ -48,11 +53,43 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
           <PostForm tag={tag} />
         </div>
         <div className='posts'>
-          {!tag && posts.map((post) => <PostItem key={post._id} post={post} />)}
+          {!tag &&
+            posts
+              .slice(0, numberOfPosts)
+              .map((post) => <PostItem key={post._id} post={post} />)}
           {tag &&
             posts
               .filter((post) => post.tag === tag)
+              .slice(0, numberOfPosts)
               .map((post) => <PostItem key={post._id} post={post} />)}
+          <div className='center-item'>
+            {tag &&
+              numberOfPosts <
+                posts.filter((post) => post.tag === tag).length && (
+                <button
+                  className='btn btn-light'
+                  onClick={() => setNumberOfPosts(numberOfPosts + 10)}
+                >
+                  Visa fler inlägg...
+                </button>
+              )}
+            {tag &&
+              numberOfPosts >=
+                posts.filter((post) => post.tag === tag).length && (
+                <p>Alla inlägg är visade</p>
+              )}
+            {!tag && numberOfPosts < posts.length && (
+              <button
+                className='btn btn-light'
+                onClick={() => setNumberOfPosts(numberOfPosts + 10)}
+              >
+                Visa fler inlägg
+              </button>
+            )}
+            {!tag && numberOfPosts >= posts.length && (
+              <p>Alla inlägg är visade</p>
+            )}
+          </div>
         </div>
       </section>
     </Fragment>
