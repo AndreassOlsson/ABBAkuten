@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
+import { updateAvatar } from '../../actions/auth';
 
 const EditProfile = ({
   profile: { profile, loading },
+  auth: { user },
   createProfile,
+  updateAvatar,
   getCurrentProfile,
   history,
 }) => {
@@ -57,10 +60,23 @@ const EditProfile = ({
     facebook,
   } = formData;
 
-  const onChange = (e) =>
+  const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const onSubmit = (e) => {
+    updateAvatar({
+      avatar: formData.focus,
+      id: user._id,
+    });
+    confirm(e);
+  };
+
+  const confirm = (e) => {
+    updateAvatar({
+      avatar: formData.focus,
+      id: user._id,
+    });
     e.preventDefault();
     createProfile(formData, history, true);
   };
@@ -205,13 +221,18 @@ const EditProfile = ({
 EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  auth: state.auth,
 });
 
-export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(EditProfile)
-);
+export default connect(mapStateToProps, {
+  createProfile,
+  getCurrentProfile,
+  updateAvatar,
+})(withRouter(EditProfile));

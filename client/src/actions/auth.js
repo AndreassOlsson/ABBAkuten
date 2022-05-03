@@ -11,6 +11,7 @@ import {
   CLEAR_PROFILE,
   CLEAR_POSTS,
   CLEAR_USER,
+  UPDATE_AVATAR,
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -99,6 +100,32 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({
       type: LOGIN_FAIL,
     });
+  }
+};
+
+export const updateAvatar = (avatar) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const id = avatar.id;
+
+  try {
+    const res = await axios.post(`/api/users/${id}`, avatar, config);
+
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data,
+    });
+    dispatch({ type: UPDATE_AVATAR });
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
   }
 };
 

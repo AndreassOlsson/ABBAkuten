@@ -187,6 +187,11 @@ small {
 .heavy-font {
   font-weight: 550;
 }
+.center-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .btn {
   display: inline-block;
@@ -200,11 +205,6 @@ small {
   font-size: 1rem;
 }
 
-.center-item {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
 .btn:hover {
   cursor: pointer;
@@ -266,6 +266,10 @@ small {
   margin: 0 0 0 6px;
   font-weight: 550;
   cursor: pointer;
+}
+
+.link-btn:hover {
+  color: var(--primary-color);
 }
 
 .lead {

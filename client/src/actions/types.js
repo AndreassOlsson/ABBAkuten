@@ -22,3 +22,4 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const CLEAR_POSTS = 'CLEAR_POSTS';
 export const CLEAR_USER = 'CLEAR_USER';
+export const UPDATE_AVATAR = 'UPDATE_AVATAR';

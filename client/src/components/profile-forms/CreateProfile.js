@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { createProfile } from '../../actions/profile';
+import { updateAvatar } from '../../actions/auth';
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
@@ -37,6 +38,7 @@ const CreateProfile = ({ createProfile, history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     createProfile(formData, history);
+    updateAvatar('test');
   };
 
   return (

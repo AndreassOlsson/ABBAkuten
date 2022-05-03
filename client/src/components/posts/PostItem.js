@@ -52,11 +52,12 @@ const PostItem = ({
               <i className='fas fa-thumbs-down'></i>
             </button>
             <Link to={`/post/${_id}`} className='link-btn'>
-              Svara <span>{comments.length > 0 ? comments.length : ''}</span>
+              Svara{' '}
+              <span>{comments.length > 0 ? `(${comments.length})` : ''}</span>
             </Link>
             {!auth.loading && user === auth.user._id && (
               <button className='link-btn' onClick={(e) => deletePost(_id)}>
-                X
+                <i className='fas fa-times'></i>
               </button>
             )}
           </Fragment>

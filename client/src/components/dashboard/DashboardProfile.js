@@ -21,7 +21,7 @@ const DashboardProfile = ({
     <div className='dashboard-profile'>
       <Fragment>
         <img
-          src={avatar}
+          src={process.env.PUBLIC_URL + '/img/nofocus.jpg'}
           alt='Profile picture'
           className='round avatar interactive'
           onClick={navigate}

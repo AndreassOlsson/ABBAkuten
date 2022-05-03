@@ -8,6 +8,7 @@ import {
   LOGOUT,
   ACCOUNT_DELETED,
   CLEAR_USER,
+  UPDATE_AVATAR,
 } from '../actions/types';
 
 const initalState = {
@@ -55,6 +56,7 @@ export default function foo(state = initalState, action) {
         user: null,
         loading: false,
       };
+    case UPDATE_AVATAR:
     default:
       return state;
   }

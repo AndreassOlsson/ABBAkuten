@@ -40,11 +40,13 @@ router.post(
       }
 
       // Get users gravatar
-      const avatar = gravatar.url(email, {
-        s: '200',
-        r: 'pg',
-        d: 'mm',
-      });
+      // const avatar = gravatar.url(email, {
+      // s: '200',
+      //r: 'pg',
+      //d: 'mm',
+      // });
+
+      let avatar = 'nofocus';
 
       user = new User({
         name,
@@ -76,6 +78,36 @@ router.post(
           res.json({ token });
         }
       );
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+  }
+);
+
+// @route   POST api/users/:id
+// @desc    UPDATE AVATAR
+// @access  Public
+router.post(
+  '/:id',
+  [check('avatar', 'Avatar required').not().isEmpty()],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { avatar } = req.body;
+
+    try {
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.id },
+        { avatar: avatar }
+      ).select('-password');
+
+      if (user) {
+        return res.json(user);
+      }
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error');
