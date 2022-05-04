@@ -10,7 +10,11 @@ const CommentItem = ({ _id, comment, auth, deleteComment }) => {
     <div className='post comment'>
       <div className='postAuthor'>
         <Link to={`/profile/${comment.user}`}>
-          <img src={comment.avatar} alt='' className='round avatar' />
+          <img
+            src={process.env.PUBLIC_URL + `/img/${comment.avatar}.jpg`}
+            alt={`Profile Picture - ${comment.avatar}`}
+            className='round avatar'
+          />
           <h5 className='primary-font break-name'>{comment.name}</h5>
         </Link>
       </div>

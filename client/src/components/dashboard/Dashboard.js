@@ -17,10 +17,6 @@ const Dashboard = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
 
-  const handleClassName = () => {
-    return ' nofocus';
-  };
-
   return loading ? (
     <section className='whole-screen abstract-background center-x light-font'>
       <Spinner />
@@ -29,8 +25,7 @@ const Dashboard = ({
     <Fragment>
       <section
         className={
-          'whole-screen abstract-background center-x light-font ' +
-          handleClassName()
+          'whole-screen abstract-background center-x light-font ' + user.avatar
         }
       >
         <div className='dashboard-container'>

@@ -494,19 +494,6 @@ small {
   border-radius: 0 0 24px 24px;
 }
 
-.td {
-  background-image: url('./img/teknisk-design.jpg');
-}
-.na {
-  background-image: url('./img/natur.jpg');
-}
-.in {
-  background-image: url('./img/internationell.jpg');
-}
-.nofocus {
-  background-image: url('./img/blank.jpg');
-}
-
 .curtains {
   height: 50vh;
   width: 100vw;
@@ -830,16 +817,16 @@ small {
 }
 
 .internationell {
-  color: var(--primary-color);
+  background-image: url('./img/internationell.jpg');
 }
 .natur {
-  color: var(--primary-color);
+  background-image: url('./img/natur.jpg');
 }
 .teknisk-design {
-  color: var(--primary-color);
+  background-image: url('./img/teknisk-design.jpg');
 }
 .nofocus {
-  color: var(--light-font);
+  background-image: url('./img/blank.jpg');
 }
 
 .favoriteLure {

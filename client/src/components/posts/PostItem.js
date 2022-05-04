@@ -23,7 +23,7 @@ const PostItem = ({
             alt={`Profile Picture - ${avatar}`}
             className='round avatar'
           />
-          <h5 className='primary-font break-name'>{name}</h5>
+          <h5 className='light-font interactive break-name'>{name}</h5>
         </Link>
       </div>
 

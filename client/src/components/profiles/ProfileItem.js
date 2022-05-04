@@ -22,7 +22,7 @@ const ProfileItem = ({
         alt={`Profile Picture - ${avatar}`}
         className='round avatar'
       />
-      <h5 className='break-name'>{name}</h5>
+      <h5 className='light-font interactive break-name'>{name}</h5>
       <h5 className='primary-font'>{grade}</h5>
     </div>
   );

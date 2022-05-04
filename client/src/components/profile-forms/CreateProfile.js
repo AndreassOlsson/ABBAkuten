@@ -84,7 +84,7 @@ const CreateProfile = ({
               <select name='focus' onChange={(e) => onChange(e)}>
                 <option value=''>{focus}</option>
                 <option value='nofocus'>Inte valt ännu</option>
-                <option value='teknisk design'>Teknisk Design</option>
+                <option value='teknisk-design'>Teknisk Design</option>
                 <option value='natur'>Natur</option>
                 <option value='internationell'>Internationell</option>
               </select>
@@ -139,7 +139,7 @@ const CreateProfile = ({
                   <i className='fab fa-snapchat fa-2x'></i>
                   <input
                     type='text'
-                    placeholder='Snapchat'
+                    placeholder='Snapchat användarnamn'
                     name='snapchat'
                     value={snapchat}
                     onChange={(e) => onChange(e)}
@@ -149,7 +149,7 @@ const CreateProfile = ({
                   <i className='fab fa-instagram fa-2x'></i>
                   <input
                     type='text'
-                    placeholder='Instagram URL'
+                    placeholder='Instagram användarnamn'
                     name='instagram'
                     value={instagram}
                     onChange={(e) => onChange(e)}
@@ -159,7 +159,7 @@ const CreateProfile = ({
                   <i className='fab fa-twitter fa-2x'></i>
                   <input
                     type='text'
-                    placeholder='Twitter URL'
+                    placeholder='Twitter användarnamn'
                     name='twitter'
                     value={twitter}
                     onChange={(e) => onChange(e)}
@@ -169,7 +169,7 @@ const CreateProfile = ({
                   <i className='fab fa-facebook fa-2x'></i>
                   <input
                     type='text'
-                    placeholder='Facebook URL'
+                    placeholder='Facebook användarnamn'
                     name='facebook'
                     value={facebook}
                     onChange={(e) => onChange(e)}
