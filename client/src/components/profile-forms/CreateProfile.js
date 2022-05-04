@@ -5,7 +5,12 @@ import { Link, withRouter } from 'react-router-dom';
 import { createProfile } from '../../actions/profile';
 import { updateAvatar } from '../../actions/auth';
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateProfile = ({
+  createProfile,
+  updateAvatar,
+  auth: { user },
+  history,
+}) => {
   const [formData, setFormData] = useState({
     grade: '',
     focus: '',
@@ -36,9 +41,20 @@ const CreateProfile = ({ createProfile, history }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
+    updateAvatar({
+      avatar: formData.focus,
+      id: user._id,
+    });
+    confirm(e);
+  };
+
+  const confirm = (e) => {
+    updateAvatar({
+      avatar: formData.focus,
+      id: user._id,
+    });
     e.preventDefault();
-    createProfile(formData, history);
-    updateAvatar('test');
+    createProfile(formData, history, true);
   };
 
   return (
@@ -175,6 +191,13 @@ const CreateProfile = ({ createProfile, history }) => {
 
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { createProfile, updateAvatar })(
+  withRouter(CreateProfile)
+);

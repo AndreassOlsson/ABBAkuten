@@ -42,8 +42,8 @@ const ProfileTop = ({
               {grade}
             </p>
             <img
-              src={process.env.PUBLIC_URL + '/img/nofocus.jpg'}
-              alt='Profile picture'
+              src={process.env.PUBLIC_URL + `/img/${avatar}.jpg`}
+              alt={`Profile Picture - ${avatar}`}
               className='round medium-avatar overlapping'
             />
           </div>
