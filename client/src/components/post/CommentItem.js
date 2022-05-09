@@ -15,7 +15,7 @@ const CommentItem = ({ _id, comment, auth, deleteComment }) => {
             alt={`Profile Picture - ${comment.avatar}`}
             className='round avatar'
           />
-          <h5 className='primary-font break-name'>{comment.name}</h5>
+          <h5 className='light-font interactive break-name'>{comment.name}</h5>
         </Link>
       </div>
       <p className='postText'>{comment.text}</p>

@@ -10,7 +10,7 @@ import DashboardLatestProfiles from './DashboardLatestProfiles';
 
 const Dashboard = ({
   getCurrentProfile,
-  auth: { user },
+  auth,
   profile: { profile, loading },
 }) => {
   useEffect(() => {
@@ -24,9 +24,7 @@ const Dashboard = ({
   ) : (
     <Fragment>
       <section
-        className={
-          'whole-screen abstract-background center-x light-font ' + user.avatar
-        }
+        className={'whole-screen abstract-background center-x light-font '}
       >
         <div className='dashboard-container'>
           <div className='dashboard-divider'>

@@ -34,11 +34,14 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
         <div className='post-form-container'>
           <h1 className='x-large'>Inlägg</h1>
           <select
+            className='thread-select light-font'
             name='tag'
             value={tag}
             onChange={(e) => setTag(e.target.value)}
           >
-            <option value=''>Alla inlägg</option>
+            <option className='dark-font' value=''>
+              Alla inlägg
+            </option>
             <option value='allmänt'>Allmänt</option>
             <option value='engelska'>Engelska</option>
             <option value='internationell'>Internationell</option>
@@ -46,9 +49,8 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
             <option value='naturvetenskap'>Naturvetenskap</option>
             <option value='svenska'>Svenska</option>
             <option value='teknik'>Teknik</option>
-            <option value='åsikter, tankar och förbättringsförslag'>
-              Åsikter, Tankar {'&'} Förbättringsförslag
-            </option>
+            <option value='åsikter'>Åsikter</option>
+            <option value='förbättringsförslag'>Förbättringsförslag</option>
           </select>
           <PostForm tag={tag} />
         </div>

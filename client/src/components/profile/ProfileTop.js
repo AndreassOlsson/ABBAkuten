@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
+import SocialIcons from './SocialIcons';
 
 const ProfileTop = ({
   profile: {
@@ -9,7 +10,7 @@ const ProfileTop = ({
     favoriteSubject,
     helpingSubjects,
     bio,
-    social: { snapchat, facebook, twitter, instagram },
+    social,
   },
 }) => {
   return (
@@ -56,51 +57,7 @@ const ProfileTop = ({
           </div>
         </div>
         <div className='social-icons light-font'>
-          {snapchat && (
-            <Fragment>
-              <i
-                class='fa fa-snapchat'
-                onMouseEnter={() => showSnap(true)}
-                onMouseLeave={() => setShowSnap(false)}
-              ></i>
-            </Fragment>
-          )}
-          {instagram && (
-            <Fragment>
-              <i
-                class='fa fa-instagram'
-                onMouseEnter={() => showInsta(true)}
-                onMouseLeave={() => setShowInsta(false)}
-                onClick={() =>
-                  window.open(`https://www.instagram.com/${instagram}/`)
-                }
-              ></i>
-            </Fragment>
-          )}
-          {twitter && (
-            <Fragment>
-              <i
-                class='fa fa-twitter'
-                onMouseEnter={() => showTwitter(true)}
-                onMouseLeave={() => setShowTwitter(false)}
-                onClick={() =>
-                  window.open(`https://www.twitter.com/${twitter}/`)
-                }
-              ></i>
-            </Fragment>
-          )}
-          {facebook && (
-            <Fragment>
-              <i
-                class='fa fa-facebook'
-                onMouseEnter={() => showFb(true)}
-                onMouseLeave={() => setShowFb(false)}
-                onClick={() =>
-                  window.open(`https://www.facebook.com/${facebook}/`)
-                }
-              ></i>
-            </Fragment>
-          )}
+          {social !== undefined && <SocialIcons social={social} />}
         </div>
       </div>
     </Fragment>
