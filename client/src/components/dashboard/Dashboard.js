@@ -7,15 +7,27 @@ import Spinner from '../layout/Spinner';
 import DashboardProfile from './DashboardProfile';
 import DashboardLatestPosts from './DashboardLatestPosts';
 import DashboardLatestProfiles from './DashboardLatestProfiles';
+import { deleteAccount } from '../../actions/profile';
 
 const Dashboard = ({
   getCurrentProfile,
   auth,
   profile: { profile, loading },
+  deleteAccount,
 }) => {
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
+
+  const handleClassName = () => {
+    if (auth && auth.user !== null) {
+      if (auth.user.avatar !== null) {
+        return auth.user.avatar;
+      }
+    } else {
+      return '';
+    }
+  };
 
   return loading ? (
     <section className='whole-screen abstract-background center-x light-font'>
@@ -24,7 +36,10 @@ const Dashboard = ({
   ) : (
     <Fragment>
       <section
-        className={'whole-screen abstract-background center-x light-font '}
+        className={
+          'whole-screen abstract-background center-x light-font ' +
+          handleClassName(auth)
+        }
       >
         <div className='dashboard-container'>
           <div className='dashboard-divider'>
@@ -38,9 +53,18 @@ const Dashboard = ({
               ) : (
                 <Fragment>
                   <h3>Välkommen</h3>
-                  <Link to='/create-profile' className='btn btn-primary'>
+                  <Link
+                    to='/create-profile'
+                    className='btn btn-primary btn-adjusted-margin'
+                  >
                     <i className='fas fa-user-circle'></i>Skapa Profil
                   </Link>
+                  <h5
+                    className='grey-font interactive'
+                    onClick={() => deleteAccount()}
+                  >
+                    Radera Kontot
+                  </h5>
                 </Fragment>
               )}
             </div>
@@ -61,6 +85,7 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
+  deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -72,4 +97,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getCurrentProfile,
+  deleteAccount,
 })(Dashboard);

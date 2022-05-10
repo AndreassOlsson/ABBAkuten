@@ -26,6 +26,7 @@ const EditProfile = ({
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+  const [isTeacher, setIsTeacher] = useState(false);
 
   useEffect(() => {
     getCurrentProfile();
@@ -64,19 +65,51 @@ const EditProfile = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const onChangeClass = (e) => {
+    let input = e.target.value;
+    if (input.toLowerCase() === 'lärare') {
+      setIsTeacher(true);
+    } else {
+      setIsTeacher(false);
+    }
+    onChange(e);
+  };
+
+  const isDisabled = () => {
+    if (isTeacher || formData.grade === 'Lärare') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const onSubmit = (e) => {
-    updateAvatar({
-      avatar: formData.focus,
-      id: user._id,
-    });
+    if (isTeacher) {
+      updateAvatar({
+        avatar: 'teacher',
+        id: user._id,
+      });
+    } else {
+      updateAvatar({
+        avatar: formData.focus,
+        id: user._id,
+      });
+    }
     confirm(e);
   };
 
   const confirm = (e) => {
-    updateAvatar({
-      avatar: formData.focus,
-      id: user._id,
-    });
+    if (isTeacher) {
+      updateAvatar({
+        avatar: 'teacher',
+        id: user._id,
+      });
+    } else {
+      updateAvatar({
+        avatar: formData.focus,
+        id: user._id,
+      });
+    }
     e.preventDefault();
     createProfile(formData, history, true);
   };
@@ -98,14 +131,18 @@ const EditProfile = ({
                 placeholder='* Klass'
                 name='grade'
                 value={grade}
-                onChange={(e) => onChange(e)}
+                onChange={(e) => onChangeClass(e)}
               />
               <small className='form-text'>
                 OBS: Om du är lärare skriv 'Lärare'
               </small>
             </div>
             <div className='form-group'>
-              <select name='focus' onChange={(e) => onChange(e)}>
+              <select
+                name='focus'
+                onChange={(e) => onChange(e)}
+                disabled={isDisabled()}
+              >
                 <option value='' selected disabled hidden>
                   {focus === 'nofocus' && 'Inte valt ännu'}
                   {focus === 'teknisk-design' && 'Teknisk Design'}

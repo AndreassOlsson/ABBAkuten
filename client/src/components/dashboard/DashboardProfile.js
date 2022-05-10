@@ -2,14 +2,15 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { deleteAccount } from '../../actions/profile';
 
 const DashboardProfile = ({
+  deleteAccount,
   profile: {
     user: { _id, name, avatar },
     grade,
   },
-  deleteAccount,
 }) => {
   const history = useHistory();
 
@@ -48,4 +49,4 @@ DashboardProfile.propTypes = {
   deleteAccount: PropTypes.func.isRequired,
 };
 
-export default DashboardProfile;
+export default connect(null, { deleteAccount })(DashboardProfile);

@@ -20,7 +20,7 @@ const ProfileTop = ({
           <div className='bg-blur'>
             <h1 className='large'>{name}</h1>
             <p className='heavy-font'>
-              {focus}
+              {avatar !== 'teacher' && focus}
               <br />
               {grade}
             </p>
