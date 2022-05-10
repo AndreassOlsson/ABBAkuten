@@ -46,7 +46,7 @@ const PostForm = ({ addPost, tag }) => {
         ></textarea>
         <small className='form-text'>
           Ditt inlägg hamnar i kanalen{' '}
-          <span className='link-standard'>{localTag}</span>
+          <span className='link-standard light-font'>{localTag}</span>
         </small>
         <input
           type='submit'

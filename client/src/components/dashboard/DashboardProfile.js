@@ -30,7 +30,13 @@ const DashboardProfile = ({
         <h3 className='interactive' onClick={navigate}>
           {name}
         </h3>
-        <h5>{grade}</h5>
+        <h5 className='primary-font'>
+          {avatar === 'teacher' && 'Lärare'}
+          {avatar === 'teknisk-design' && 'Teknisk Design - ' + grade}
+          {avatar === 'natur' && 'Naturvetenskap - ' + grade}
+          {avatar === 'internationell' && 'Internationell - ' + grade}
+          {avatar === 'nofocus' && 'Inte valt inriktning ännu - ' + grade}
+        </h5>
         <div className='dashboard-profile-actions'>
           <Link to='/edit-profile' className='primary-font'>
             <i className='fas fa-pen'></i>

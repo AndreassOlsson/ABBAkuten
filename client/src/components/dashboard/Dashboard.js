@@ -8,21 +8,24 @@ import DashboardProfile from './DashboardProfile';
 import DashboardLatestPosts from './DashboardLatestPosts';
 import DashboardLatestProfiles from './DashboardLatestProfiles';
 import { deleteAccount } from '../../actions/profile';
+import { loadUser } from '../../actions/auth';
 
 const Dashboard = ({
   getCurrentProfile,
   auth,
   profile: { profile, loading },
   deleteAccount,
+  loadUser,
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, [getCurrentProfile]);
+    loadUser();
+  }, [getCurrentProfile, loadUser]);
 
   const handleClassName = () => {
     if (auth && auth.user !== null) {
       if (auth.user.avatar !== null) {
-        return auth.user.avatar;
+        return 'theme-' + auth.user.avatar;
       }
     } else {
       return '';
@@ -41,41 +44,43 @@ const Dashboard = ({
           handleClassName(auth)
         }
       >
-        <div className='dashboard-container'>
-          <div className='dashboard-divider'>
-            <div className='dashboard-content'>
-              {profile !== null ? (
-                <DashboardProfile
-                  key={profile._id}
-                  profile={profile}
-                  hasProfile={true}
-                />
-              ) : (
-                <Fragment>
-                  <h3>Välkommen</h3>
-                  <Link
-                    to='/create-profile'
-                    className='btn btn-primary btn-adjusted-margin'
-                  >
-                    <i className='fas fa-user-circle'></i>Skapa Profil
-                  </Link>
-                  <h5
-                    className='grey-font interactive'
-                    onClick={() => deleteAccount()}
-                  >
-                    Radera Kontot
-                  </h5>
-                </Fragment>
-              )}
+        <div className='bg-gray'>
+          <div className='dashboard-container'>
+            <div className='dashboard-divider'>
+              <div className='dashboard-content'>
+                {profile !== null ? (
+                  <DashboardProfile
+                    key={profile._id}
+                    profile={profile}
+                    hasProfile={true}
+                  />
+                ) : (
+                  <Fragment>
+                    <h3>Välkommen, skapa en profil nedan!</h3>
+                    <Link
+                      to='/create-profile'
+                      className='btn btn-primary btn-adjusted-margin'
+                    >
+                      <i className='fas fa-user-circle'></i>Skapa Profil
+                    </Link>
+                    <h5
+                      className='grey-font interactive'
+                      onClick={() => deleteAccount()}
+                    >
+                      Radera Kontot
+                    </h5>
+                  </Fragment>
+                )}
+              </div>
+
+              <div className='dashboard-content'>
+                <DashboardLatestProfiles />
+              </div>
             </div>
 
-            <div className='dashboard-content'>
-              <DashboardLatestProfiles />
+            <div className='dashboard-content dashboard-posts-parent'>
+              <DashboardLatestPosts />
             </div>
-          </div>
-
-          <div className='dashboard-content dashboard-posts-parent'>
-            <DashboardLatestPosts />
           </div>
         </div>
       </section>
@@ -86,6 +91,7 @@ const Dashboard = ({
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
+  loadUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -98,4 +104,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   getCurrentProfile,
   deleteAccount,
+  loadUser,
 })(Dashboard);

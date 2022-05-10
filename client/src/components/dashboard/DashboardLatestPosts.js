@@ -17,7 +17,7 @@ const DashboardLatestPosts = ({ getPosts, post: { posts, loading } }) => {
   ) : (
     <Fragment>
       <Link to='/posts' className='light-font'>
-        <h3>Senaste Inläggen</h3>
+        <h3>Hetaste Diskussionerna</h3>
       </Link>
 
       <div className='dashboard-latest-posts'>

@@ -155,12 +155,10 @@ small {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #726c98;
 }
 
 .bg-dark {
-  background-color: rgb(20, 20, 20);
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(10, 10, 10);
 }
 
 .bg-light {
@@ -256,10 +254,14 @@ small {
 
 .link-standard {
   font-size: inherit;
-  color: var(--light-font);
+  color: var(--primary-color);
   font-style: italic;
   text-transform: capitalize;
   font-weight: bold;
+}
+
+.light-font {
+  color: var(--light-font);
 }
 
 .link-btn {
@@ -356,7 +358,7 @@ small {
   background: rgb(35, 35, 35);
   border-radius: 24px;
   padding: 24px 48px;
-  margin: 12px;
+  margin: 6px;
 }
 .dashboard-profile {
   display: flex;
@@ -505,7 +507,7 @@ small {
   background-color: rgb(0, 0, 0);
 }
 
-.bg-blur {
+.bg-blur, .bg-gray {
   width: inherit;
   height: inherit;
   display: inherit;
@@ -515,6 +517,11 @@ small {
   text-align: center;
   backdrop-filter: blur(0px);
   border-radius: 0 0 24px 24px;
+}
+
+.bg-gray {
+  backdrop-filter: blur(10px) brightness(0.75);
+  text-align: inherit;
 }
 
 .top-left {
@@ -588,9 +595,9 @@ small {
   margin-left: 24px;
   margin-top: 24px;
   background-color: transparent;
-  border-bottom: 1px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   color: var(--light-font);
-  width: 200px;
+  width: 180px;
 }
 option:not(:first-of-type) {
   color: black;
@@ -605,6 +612,11 @@ option:not(:first-of-type) {
 .post-form form.form {
   margin: 0;
 }
+.post-form form.form {
+  position: relative;
+  bottom: 12px;
+}
+
 
 .post-form-container > .x-large {
   border-bottom: 3px solid var(--primary-color);
@@ -864,8 +876,24 @@ option:not(:first-of-type) {
 }
 .teacher {
   background-image: url('./img/teacher.jpg');
-
 }
+
+.theme-internationell {
+  background-image: url('./img/theme-internationell.png');
+}
+.theme-natur {
+  background-image: url('./img/theme-natur.png');
+}
+.theme-teknisk-design {
+  background-image: url('./img/theme-teknisk-design-2.png');
+}
+.theme-nofocus {
+  background-image: url('./img/theme-blank.png');
+}
+.theme-teacher {
+  background-image: url('./img/teacher.jpg');
+}
+
 
 .favoriteLure {
   align-self: flex-end;
@@ -986,6 +1014,7 @@ option:not(:first-of-type) {
   padding: 48px 48px;
   z-index: 1;
   margin: 48px 0;
+  border-radius: 24px;
 }
 
 form.form {
@@ -1196,9 +1225,17 @@ input:-webkit-autofill:active {
   position: relative;
   height: 90vh;
   width: 100%;
-  background-image: url(img/students-placeholder.jpg);
+  background-image: url(img/abb-building-2.png);
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
+}
+
+.team-pic {
+  background-image: url(img/team-pic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+
 }
 
 .landing-content {
@@ -1213,7 +1250,7 @@ input:-webkit-autofill:active {
   width: 100%;
   height: 100%;
   text-align: center;
-  backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(40%);
 }
 
 .landing-content .lead {

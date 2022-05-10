@@ -20,9 +20,13 @@ const ProfileTop = ({
           <div className='bg-blur'>
             <h1 className='large'>{name}</h1>
             <p className='heavy-font'>
-              {avatar !== 'teacher' && focus}
+              {avatar === 'teacher' && ''}
+              {avatar === 'teknisk-design' && 'Teknisk Design'}
+              {avatar === 'natur' && 'Naturvetenskap'}
+              {avatar === 'internationell' && 'Internationell'}
+              {avatar === 'nofocus' && 'Inte valt inriktning ännu'}
               <br />
-              {grade}
+              {grade !== 'lärare' ? grade : 'Lärare'}
             </p>
             <img
               src={process.env.PUBLIC_URL + `/img/${avatar}.jpg`}

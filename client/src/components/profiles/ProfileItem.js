@@ -23,7 +23,7 @@ const ProfileItem = ({
         className='round avatar'
       />
       <h5 className='light-font interactive break-name'>{name}</h5>
-      <h5 className='primary-font'>{grade}</h5>
+      <h5 className='primary-font'> {grade !== 'lärare' ? grade : 'Lärare'}</h5>
     </div>
   );
 };

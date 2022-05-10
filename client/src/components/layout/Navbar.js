@@ -11,7 +11,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link to='/posts' className='light-font'>
           <i className='fas fa-mail-bulk'></i>
           {''}
-          <span className='hide-sm'>Inlägg</span>
+          <span className='hide-sm'>Elevfrågor</span>
         </Link>
       </li>
       <li>

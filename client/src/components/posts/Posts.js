@@ -32,7 +32,7 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
     <Fragment>
       <section className='whole-screen abstract-background center-x light-font'>
         <div className='post-form-container'>
-          <h1 className='x-large'>Inlägg</h1>
+          <h1 className='x-large'>Elevfrågor</h1>
           <select
             className='thread-select light-font'
             name='tag'
@@ -40,7 +40,7 @@ const Posts = ({ location, getPosts, post: { posts, loading } }) => {
             onChange={(e) => setTag(e.target.value)}
           >
             <option className='dark-font' value=''>
-              Alla inlägg
+              Alla frågor
             </option>
             <option value='allmänt'>Allmänt</option>
             <option value='engelska'>Engelska</option>
