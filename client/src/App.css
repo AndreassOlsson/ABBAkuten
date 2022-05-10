@@ -520,7 +520,7 @@ small {
 }
 
 .bg-gray {
-  backdrop-filter: blur(10px) brightness(0.75);
+  backdrop-filter: blur(5px) brightness(0.75);
   text-align: inherit;
 }
 
